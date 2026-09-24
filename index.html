@@ -221,6 +221,19 @@
     color:var(--ink);
     text-align:center;
   }
+  .theme-grid .avatars{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin-top:14px;
+  }
+  .theme-grid .avatars img{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    object-fit:cover;
+    border:1px solid var(--gold);
+  }
   @media (max-width:680px){
     .theme-grid{ grid-template-columns:repeat(2,1fr); }
     .overview-grid{ grid-template-columns:120px 1fr; }
@@ -361,14 +374,35 @@
       </p>
       <ul class="theme-grid">
         <li>M&amp;A</li>
-        <li>AI</li>
-        <li>組織開発</li>
+        <li>
+          AI
+          <div class="avatars"><img src="assets/yamakawa.webp" alt="山川" title="山川"></div>
+        </li>
+        <li>
+          組織開発
+          <div class="avatars"><img src="assets/yamakawa.webp" alt="山川" title="山川"></div>
+        </li>
         <li>人材採用</li>
-        <li>新規事業開発</li>
+        <li>
+          新規事業開発
+          <div class="avatars"><img src="assets/yamakawa.webp" alt="山川" title="山川"></div>
+        </li>
         <li>マーケティング</li>
         <li>リアルビジネス</li>
         <li>海外進出</li>
         <li>後継者育成</li>
+        <li>最新テクノロジー</li>
+        <li>フィジカルAI</li>
+        <li>
+          営業
+          <div class="avatars"><img src="assets/yamakawa.webp" alt="山川" title="山川"></div>
+        </li>
+        <li>
+          エンプラ攻略
+          <div class="avatars"><img src="assets/yamakawa.webp" alt="山川" title="山川"></div>
+        </li>
+        <li>なんでもOK</li>
+        <li>その他</li>
       </ul>
     </div>
   </section>
