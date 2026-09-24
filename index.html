@@ -229,9 +229,9 @@
   /* apply */
   .apply-box{
     text-align:center;
-    padding:70px 40px;
+    padding:60px 24px 50px;
     border:1px solid var(--line);
-    max-width:640px;
+    max-width:680px;
     margin:0 auto;
   }
   .apply-box .deadline{
@@ -239,6 +239,34 @@
     font-size:14px;
     letter-spacing:0.1em;
     margin-bottom:30px;
+  }
+  .form-embed{
+    background:#fff;
+    max-width:640px;
+    margin:0 auto;
+  }
+  .form-embed iframe{
+    display:block;
+    width:100%;
+    height:1400px;
+    border:none;
+  }
+  .cta-alt{
+    display:inline-block;
+    margin-top:26px;
+    border:none;
+    color:var(--ink-dim);
+    font-size:13px;
+    letter-spacing:0.08em;
+    padding:0;
+    text-decoration:underline;
+  }
+  .cta-alt:hover{
+    background:none;
+    color:var(--gold);
+  }
+  @media (max-width:600px){
+    .form-embed iframe{ height:1700px; }
   }
 
   /* organizer */
@@ -354,8 +382,10 @@
         <p class="lead" style="margin:0 auto 34px;">
           下記フォームより、お名前・会社名・ご参加可否などをご入力の上お申込みください。
         </p>
-        <!-- TODO: Googleフォーム作成後、下記の href を発行されたフォームURLに差し替えてください -->
-        <a class="cta" href="https://forms.gle/72U7nGz29xGHVXmF9" target="_blank" rel="noopener">Googleフォームで申し込む</a>
+        <div class="form-embed">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeFxEq4hXr1yqtsA68kLJQaEXaNpO06sy6hmg7LHEKXIdyhiQ/viewform?embedded=true" loading="lazy">読み込んでいます…</iframe>
+        </div>
+        <a class="cta cta-alt" href="https://forms.gle/72U7nGz29xGHVXmF9" target="_blank" rel="noopener">フォームが表示されない場合はこちら</a>
       </div>
     </div>
   </section>
