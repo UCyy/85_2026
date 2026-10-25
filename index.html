@@ -299,6 +299,47 @@
     .overview-grid{ grid-template-columns:120px 1fr; }
   }
 
+  /* voices ticker */
+  .ticker{
+    overflow:hidden;
+    margin-top:48px;
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    mask-image:linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  }
+  .ticker-track{
+    display:flex;
+    width:max-content;
+    animation:ticker 60s linear infinite;
+  }
+  .ticker:hover .ticker-track{ animation-play-state:paused; }
+  @keyframes ticker{
+    from{ transform:translateX(-50%); }
+    to{ transform:translateX(0); }
+  }
+  .voice{
+    flex:0 0 auto;
+    width:min(420px, 78vw);
+    margin-right:24px;
+    padding:28px 30px;
+    border:1px solid var(--line);
+    background:var(--bg-soft);
+  }
+  .voice p{
+    margin:0 0 16px;
+    font-size:14px;
+    line-height:1.95;
+    color:var(--ink);
+  }
+  .voice .who{
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    color:var(--gold);
+  }
+  @media (prefers-reduced-motion:reduce){
+    .ticker{ overflow-x:auto; }
+    .ticker-track{ animation:none; }
+  }
+
   /* apply */
   .apply-box{
     text-align:center;
@@ -532,6 +573,33 @@
     </div>
   </section>
 
+  <section class="voices">
+    <div class="wrap reveal">
+      <span class="kicker">Voices</span>
+      <h2>参加者からのひとこと</h2>
+    </div>
+    <div class="ticker">
+      <div class="ticker-track">
+        <div class="voice">
+          <p>幹事ですmm たくさん集まってくれると嬉しいです！AI時代は、志のある同世代とのつながりこそ最大の資産になるはず！年末まで駆け抜けておいしいお酒を飲もう～！</p>
+          <span class="who">（ギブリー 山川）</span>
+        </div>
+        <div class="voice">
+          <p>昔はタダコピ、今はスクールウィズ、直近では雷に撃たれた芸人の太田英基です。足元の事業が伸びて来ている中、さらなる一手を何とするべきかを考え中。スタッフ規模も100人近くなり、組織強化も課題。皆さん色々教えてくだされ！</p>
+          <span class="who">（スクールウィズ 太田）</span>
+        </div>
+        <div class="voice">
+          <p>NOVARCAの濵野です。1年の締めくくりと来年に向けて色々話しましょう！</p>
+          <span class="who">（株式会社NOVARCA 濵野）</span>
+        </div>
+        <div class="voice">
+          <p>企画ありがとう！楽しみ！！</p>
+          <span class="who">（株式会社オーリーズ 鈴木）</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="apply" class="alt">
     <div class="wrap reveal" style="text-align:center;">
       <span class="kicker">Entry</span>
@@ -578,6 +646,15 @@
         ticking = true;
       }
     });
+
+    // ticker: repeat until the track is wide enough, then mirror it so the loop is seamless
+    const track = document.querySelector('.ticker-track');
+    const voices = track.innerHTML;
+    let guard = 0;
+    while (track.scrollWidth < window.innerWidth * 2 && guard++ < 20) {
+      track.innerHTML += voices;
+    }
+    track.innerHTML += track.innerHTML;
 
     // scroll reveal
     const reveals = document.querySelectorAll('.reveal');
