@@ -240,6 +240,27 @@
     color:var(--ink-dim);
   }
 
+  .map{
+    margin-top:48px;
+    max-width:680px;
+    border:1px solid var(--line);
+  }
+  .map iframe{
+    display:block;
+    width:100%;
+    height:340px;
+    border:none;
+  }
+  .map-link{
+    display:inline-block;
+    margin-top:16px;
+    font-size:13px;
+    letter-spacing:0.08em;
+    color:var(--ink-dim);
+    text-decoration:underline;
+  }
+  .map-link:hover{ color:var(--gold); }
+
   /* program / themes */
   .theme-grid{
     list-style:none;
@@ -354,7 +375,7 @@
       <p class="tagline">1985年生まれの経営者たちが、一年の締めくくりに集う夜。</p>
       <div class="hero-meta">
         <span>2026.12.21 (Mon) 17:30 START</span>
-        <span>都内某所 レストラン</span>
+        <span>ザ・キャピトルホテル東急</span>
         <span>会費 30,000円</span>
       </div>
       <a class="cta" href="#apply">参加を申し込む</a>
@@ -389,8 +410,9 @@
         <dd>2026年12月21日(月) 17:15開場 / 17:30開始</dd>
 
         <dt>場所</dt>
-        <dd>都内某所のレストラン
-          <span class="note">会場は確定次第、あらためてお知らせいたします。</span>
+        <dd>ザ・キャピトルホテル東急
+          <span class="note">〒100-0014 東京都千代田区永田町2-10-3<br>
+            東京メトロ 千代田線・丸ノ内線「国会議事堂前駅」／南北線・銀座線「溜池山王駅」6番出口 地下直結</span>
         </dd>
 
         <dt>会費</dt>
@@ -409,6 +431,13 @@
           <span class="note">ご連絡はFacebookまでお願いいたします。</span>
         </dd>
       </dl>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps?q=%e3%82%b6%e3%83%bb%e3%82%ad%e3%83%a3%e3%83%94%e3%83%88%e3%83%ab%e3%83%9b%e3%83%86%e3%83%ab%e6%9d%b1%e6%80%a5+%e6%9d%b1%e4%ba%ac%e9%83%bd%e5%8d%83%e4%bb%a3%e7%94%b0%e5%8c%ba%e6%b0%b8%e7%94%b0%e7%94%ba2-10-3&amp;output=embed"
+          title="ザ・キャピトルホテル東急 地図" loading="lazy"></iframe>
+      </div>
+      <a class="map-link" href="https://www.tokyuhotels.co.jp/capitol-h/access/index.html" target="_blank" rel="noopener">ホテル公式サイトのアクセス案内を見る</a>
     </div>
   </section>
 
