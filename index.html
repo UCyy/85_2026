@@ -1,10 +1,17 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>85会 2026 忘年会</title>
 <meta name="description" content="85会(1985年生まれ経営者の会) 2026年忘年会のご案内">
+<!-- 招待者向けページのため検索エンジンには載せない -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="85会 2026 忘年会">
+<meta property="og:description" content="2026.12.21(月) ザ・キャピトルホテル東急。1985年生まれの経営者たちが、一年の締めくくりに集う夜。">
+<meta property="og:url" content="https://ucyy.github.io/85_2026/">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -283,13 +290,14 @@
   }
   .theme-grid .avatars{
     display:flex;
+    flex-wrap:wrap;
     justify-content:center;
-    gap:8px;
+    gap:6px;
     margin-top:14px;
   }
   .theme-grid .avatars img{
-    width:34px;
-    height:34px;
+    width:30px;
+    height:30px;
     border-radius:50%;
     object-fit:cover;
     border:1px solid var(--gold);
@@ -297,6 +305,100 @@
   @media (max-width:680px){
     .theme-grid{ grid-template-columns:repeat(2,1fr); }
     .overview-grid{ grid-template-columns:120px 1fr; }
+  }
+
+  /* guests */
+  .gauge{
+    max-width:720px;
+    margin:0 0 54px;
+  }
+  .gauge-head{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:20px;
+  }
+  .gauge-num{
+    font-family:"Shippori Mincho", serif;
+    font-size:48px;
+    line-height:1;
+    color:var(--gold);
+  }
+  .gauge-unit{ font-size:14px; color:var(--ink-dim); }
+  .gauge-track{
+    position:relative;
+    height:10px;
+    border:1px solid var(--line);
+    background:linear-gradient(90deg,
+      rgba(194,91,74,0.20) 0 62.5%,
+      rgba(200,162,75,0.18) 62.5% 87.5%,
+      rgba(122,170,120,0.22) 87.5% 100%);
+  }
+  .gauge-fill{
+    position:absolute;
+    top:0; bottom:0; left:0;
+    width:0;
+    background:var(--gold);
+    transition:width 1s ease;
+  }
+  .gauge-fill[data-state="deficit"]{ background:#c25b4a; }
+  .gauge-fill[data-state="profit"]{ background:#7aaa78; }
+  .gauge-marks{
+    position:relative;
+    height:26px;
+    margin-top:10px;
+    font-size:11.5px;
+    letter-spacing:0.04em;
+    color:var(--ink-dim);
+  }
+  .gauge-marks span{
+    position:absolute;
+    top:8px;
+    transform:translateX(-50%);
+    white-space:nowrap;
+  }
+  .gauge-marks span::before{
+    content:"";
+    position:absolute;
+    top:-10px; left:50%;
+    width:1px; height:8px;
+    background:var(--gold-soft);
+  }
+  .gauge-msg{
+    margin:20px 0 0;
+    font-size:14px;
+    color:var(--ink);
+  }
+  .guest-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+  }
+  .guest{
+    background:var(--bg);
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:18px 20px;
+  }
+  .guest b{
+    display:block;
+    font-weight:400;
+    font-size:15px;
+    color:var(--ink);
+    margin-bottom:5px;
+  }
+  .guest span{
+    font-size:12.5px;
+    color:var(--ink-dim);
+  }
+  @media (max-width:680px){
+    .guest-list{ grid-template-columns:repeat(2,1fr); }
+    .gauge-marks{ font-size:10.5px; }
+    .gauge-marks span:last-child{ transform:translateX(-70%); }
   }
 
   /* voices ticker */
@@ -497,6 +599,13 @@
             <img src="assets/yamakawa.webp" alt="山川" title="山川">
             <img src="assets/member04.jpg" alt="濵野智成" title="濵野智成">
             <img src="assets/member05.jpg" alt="土井健" title="土井健">
+            <img src="assets/member08.jpg" alt="飯田悠司" title="飯田悠司">
+            <img src="assets/member09.jpg" alt="長澤里美" title="長澤里美">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member14.jpg" alt="安倉知弘" title="安倉知弘">
+            <img src="assets/member15.jpg" alt="明賀大介" title="明賀大介">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
+            <img src="assets/member17.jpg" alt="渡邉拓" title="渡邉拓">
           </div>
         </li>
         <li>
@@ -504,6 +613,10 @@
           <div class="avatars">
             <img src="assets/yamakawa.webp" alt="山川" title="山川">
             <img src="assets/member05.jpg" alt="土井健" title="土井健">
+            <img src="assets/member08.jpg" alt="飯田悠司" title="飯田悠司">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member11.jpg" alt="李良剛" title="李良剛">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
           </div>
         </li>
         <li>
@@ -512,17 +625,37 @@
             <img src="assets/yamakawa.webp" alt="山川" title="山川">
             <img src="assets/member03.jpg" alt="太田英基" title="太田英基">
             <img src="assets/member05.jpg" alt="土井健" title="土井健">
+            <img src="assets/member08.jpg" alt="飯田悠司" title="飯田悠司">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member11.jpg" alt="李良剛" title="李良剛">
+            <img src="assets/member13.jpg" alt="高橋飛翔" title="高橋飛翔">
+            <img src="assets/member15.jpg" alt="明賀大介" title="明賀大介">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
+            <img src="assets/member17.jpg" alt="渡邉拓" title="渡邉拓">
           </div>
         </li>
         <li>
           海外進出
-          <div class="avatars"><img src="assets/member04.jpg" alt="濵野智成" title="濵野智成"></div>
+          <div class="avatars">
+            <img src="assets/member04.jpg" alt="濵野智成" title="濵野智成">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member11.jpg" alt="李良剛" title="李良剛">
+            <img src="assets/member12.jpg" alt="大南洋右" title="大南洋右">
+            <img src="assets/member14.jpg" alt="安倉知弘" title="安倉知弘">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
+            <img src="assets/member17.jpg" alt="渡邉拓" title="渡邉拓">
+          </div>
         </li>
         <li>
           店舗・リアルビジネス
           <div class="avatars">
             <img src="assets/member03.jpg" alt="太田英基" title="太田英基">
             <img src="assets/member05.jpg" alt="土井健" title="土井健">
+            <img src="assets/member09.jpg" alt="長澤里美" title="長澤里美">
+            <img src="assets/member12.jpg" alt="大南洋右" title="大南洋右">
+            <img src="assets/member14.jpg" alt="安倉知弘" title="安倉知弘">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
+            <img src="assets/member17.jpg" alt="渡邉拓" title="渡邉拓">
           </div>
         </li>
         <li>
@@ -530,6 +663,13 @@
           <div class="avatars">
             <img src="assets/member04.jpg" alt="濵野智成" title="濵野智成">
             <img src="assets/member05.jpg" alt="土井健" title="土井健">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member11.jpg" alt="李良剛" title="李良剛">
+            <img src="assets/member12.jpg" alt="大南洋右" title="大南洋右">
+            <img src="assets/member13.jpg" alt="高橋飛翔" title="高橋飛翔">
+            <img src="assets/member14.jpg" alt="安倉知弘" title="安倉知弘">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
+            <img src="assets/member17.jpg" alt="渡邉拓" title="渡邉拓">
           </div>
         </li>
         <li>
@@ -538,28 +678,77 @@
             <img src="assets/yamakawa.webp" alt="山川" title="山川">
             <img src="assets/member02.webp" alt="中川瑞穂" title="中川瑞穂">
             <img src="assets/member03.jpg" alt="太田英基" title="太田英基">
+            <img src="assets/member07.jpg" alt="岡田諭志" title="岡田諭志">
+            <img src="assets/member08.jpg" alt="飯田悠司" title="飯田悠司">
+            <img src="assets/member09.jpg" alt="長澤里美" title="長澤里美">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member14.jpg" alt="安倉知弘" title="安倉知弘">
+            <img src="assets/member15.jpg" alt="明賀大介" title="明賀大介">
+            <img src="assets/member17.jpg" alt="渡邉拓" title="渡邉拓">
           </div>
         </li>
-        <li>採用・人材育成</li>
+        <li>
+          採用・人材育成
+          <div class="avatars">
+            <img src="assets/member07.jpg" alt="岡田諭志" title="岡田諭志">
+            <img src="assets/member08.jpg" alt="飯田悠司" title="飯田悠司">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+          </div>
+        </li>
         <li>
           健康・体力づくり・美容
-          <div class="avatars"><img src="assets/yamakawa.webp" alt="山川" title="山川"></div>
+          <div class="avatars">
+            <img src="assets/yamakawa.webp" alt="山川" title="山川">
+            <img src="assets/member07.jpg" alt="岡田諭志" title="岡田諭志">
+            <img src="assets/member09.jpg" alt="長澤里美" title="長澤里美">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member11.jpg" alt="李良剛" title="李良剛">
+            <img src="assets/member12.jpg" alt="大南洋右" title="大南洋右">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
+          </div>
         </li>
         <li>
           資産形成・個人投資
-          <div class="avatars"><img src="assets/member05.jpg" alt="土井健" title="土井健"></div>
+          <div class="avatars">
+            <img src="assets/member05.jpg" alt="土井健" title="土井健">
+            <img src="assets/member07.jpg" alt="岡田諭志" title="岡田諭志">
+            <img src="assets/member11.jpg" alt="李良剛" title="李良剛">
+            <img src="assets/member14.jpg" alt="安倉知弘" title="安倉知弘">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
+            <img src="assets/member17.jpg" alt="渡邉拓" title="渡邉拓">
+          </div>
         </li>
         <li>
           プライベートと経営の両立
-          <div class="avatars"><img src="assets/member03.jpg" alt="太田英基" title="太田英基"></div>
+          <div class="avatars">
+            <img src="assets/member03.jpg" alt="太田英基" title="太田英基">
+            <img src="assets/member11.jpg" alt="李良剛" title="李良剛">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
+          </div>
         </li>
-        <li>子どもの教育</li>
+        <li>
+          子どもの教育
+          <div class="avatars">
+            <img src="assets/member07.jpg" alt="岡田諭志" title="岡田諭志">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member11.jpg" alt="李良剛" title="李良剛">
+            <img src="assets/member14.jpg" alt="安倉知弘" title="安倉知弘">
+            <img src="assets/member15.jpg" alt="明賀大介" title="明賀大介">
+          </div>
+        </li>
         <li>
           やわらかい話
           <div class="avatars">
             <img src="assets/yamakawa.webp" alt="山川" title="山川">
             <img src="assets/member02.webp" alt="中川瑞穂" title="中川瑞穂">
             <img src="assets/member06.jpg" alt="鈴木多聞" title="鈴木多聞">
+            <img src="assets/member07.jpg" alt="岡田諭志" title="岡田諭志">
+            <img src="assets/member08.jpg" alt="飯田悠司" title="飯田悠司">
+            <img src="assets/member09.jpg" alt="長澤里美" title="長澤里美">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member12.jpg" alt="大南洋右" title="大南洋右">
+            <img src="assets/member15.jpg" alt="明賀大介" title="明賀大介">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
           </div>
         </li>
         <li>
@@ -567,8 +756,52 @@
           <div class="avatars">
             <img src="assets/yamakawa.webp" alt="山川" title="山川">
             <img src="assets/member06.jpg" alt="鈴木多聞" title="鈴木多聞">
+            <img src="assets/member09.jpg" alt="長澤里美" title="長澤里美">
+            <img src="assets/member10.jpg" alt="北嶋貴朗" title="北嶋貴朗">
+            <img src="assets/member15.jpg" alt="明賀大介" title="明賀大介">
+            <img src="assets/member16.jpg" alt="藤井伸弘" title="藤井伸弘">
           </div>
         </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="guests alt">
+    <div class="wrap reveal">
+      <span class="kicker">Guests</span>
+      <h2>参加者</h2>
+
+      <div class="gauge">
+        <div class="gauge-head">
+          <span class="gauge-num" id="guestCount">0</span>
+          <span class="gauge-unit">名 参加予定</span>
+        </div>
+        <div class="gauge-track"><div class="gauge-fill" id="gaugeFill"></div></div>
+        <div class="gauge-marks">
+          <span style="left:62.5%">25名 採算</span>
+          <span style="left:87.5%">35名 黒字</span>
+        </div>
+        <p class="gauge-msg" id="gaugeMsg"></p>
+      </div>
+
+      <ul class="guest-list">
+        <li class="guest"><b>山川雄志</b><span>株式会社ギブリー</span></li>
+        <li class="guest"><b>中川瑞穂</b><span>Withpawlife株式会社</span></li>
+        <li class="guest"><b>太田英基</b><span>スクールウィズ</span></li>
+        <li class="guest"><b>濵野智成</b><span>株式会社NOVARCA</span></li>
+        <li class="guest"><b>土井健</b><span>ohpner株式会社</span></li>
+        <li class="guest"><b>鈴木多聞</b><span>株式会社オーリーズ</span></li>
+        <li class="guest"><b>岡田諭志</b><span>株式会社Stand to you</span></li>
+        <li class="guest"><b>飯田悠司</b><span>株式会社リーディングマーク</span></li>
+        <li class="guest"><b>長澤里美</b><span>WannaEat株式会社</span></li>
+        <li class="guest"><b>北嶋貴朗</b><span>株式会社Relicホールディングス</span></li>
+        <li class="guest"><b>李良剛</b><span>Global Wealth Management株式会社</span></li>
+        <li class="guest"><b>大南洋右</b><span>MUSCAT GROUP</span></li>
+        <li class="guest"><b>高橋飛翔</b><span>ナイル株式会社</span></li>
+        <li class="guest"><b>安倉知弘</b><span>株式会社heart relation</span></li>
+        <li class="guest"><b>明賀大介</b><span>aicrew株式会社</span></li>
+        <li class="guest"><b>藤井伸弘</b><span>株式会社magnifi</span></li>
+        <li class="guest"><b>渡邉拓</b><span>株式会社BitStar</span></li>
       </ul>
     </div>
   </section>
@@ -595,6 +828,30 @@
         <div class="voice">
           <p>企画ありがとう！楽しみ！！</p>
           <span class="who">（株式会社オーリーズ 鈴木）</span>
+        </div>
+        <div class="voice">
+          <p>ゆうし企画ありがとう～！今年最後の85会楽しみにしてます！</p>
+          <span class="who">（WannaEat株式会社 長澤）</span>
+        </div>
+        <div class="voice">
+          <p>とにかく盛り上げる！</p>
+          <span class="who">（Global Wealth Management株式会社 李）</span>
+        </div>
+        <div class="voice">
+          <p>みんなと色々話せるのが楽しみです！</p>
+          <span class="who">（ナイル株式会社 高橋）</span>
+        </div>
+        <div class="voice">
+          <p>華の85会、楽しみです！</p>
+          <span class="who">（aicrew株式会社 明賀）</span>
+        </div>
+        <div class="voice">
+          <p>85会は生涯のターニングポイントになると確信してます。</p>
+          <span class="who">（株式会社magnifi 藤井）</span>
+        </div>
+        <div class="voice">
+          <p>BitStarの渡邉拓です。同年代、気兼ねなく話せると思うので、今年の振り返りや来年の抱負を意見交換しましょう〜！よろしくお願いします！</p>
+          <span class="who">（株式会社BitStar 渡邉）</span>
         </div>
       </div>
     </div>
@@ -646,6 +903,26 @@
         ticking = true;
       }
     });
+
+    // guest gauge: headcount comes from the list, so adding a guest updates everything
+    const BREAK_EVEN = 25, PROFIT = 35, GAUGE_MAX = 40;
+    const n = document.querySelectorAll('.guest').length;
+    const fill = document.getElementById('gaugeFill');
+    document.getElementById('guestCount').textContent = n;
+    fill.style.width = Math.min(n / GAUGE_MAX * 100, 100) + '%';
+    if (n < BREAK_EVEN) {
+      fill.dataset.state = 'deficit';
+      document.getElementById('gaugeMsg').textContent =
+        `採算ライン（${BREAK_EVEN}名）まで、あと ${BREAK_EVEN - n}名。未エントリーの方は、お早めのエントリーにご協力をお願いします。`;
+    } else if (n < PROFIT) {
+      fill.dataset.state = 'even';
+      document.getElementById('gaugeMsg').textContent =
+        `採算ライン（${BREAK_EVEN}名）を突破しました。黒字ライン（${PROFIT}名）まで、あと ${PROFIT - n}名。未エントリーの方は、お早めのエントリーにご協力をお願いします。`;
+    } else {
+      fill.dataset.state = 'profit';
+      document.getElementById('gaugeMsg').textContent =
+        `黒字ライン（${PROFIT}名）を突破しました。ありがとうございます！`;
+    }
 
     // ticker: repeat until the track is wide enough, then mirror it so the loop is seamless
     const track = document.querySelector('.ticker-track');
